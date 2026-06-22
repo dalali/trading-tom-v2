@@ -1,0 +1,122 @@
+/* Design tokens — docs/design.md Section 2 (palette, type, spacing). */
+:root {
+  /* Neutrals */
+  --neutral-0: #ffffff;
+  --neutral-50: #f7f8fa;
+  --neutral-100: #eef0f3;
+  --neutral-200: #e2e5ea;
+  --neutral-300: #c7ccd4;
+  --neutral-500: #8a93a1;
+  --neutral-700: #4b5563;
+  --neutral-900: #1a1f2b;
+
+  /* Brand / primary accent */
+  --primary-600: #2554c7;
+  --primary-700: #1e429e;
+  --primary-50: #eaf0fd;
+
+  /* Gains / losses */
+  --gain-600: #15803d;
+  --gain-50: #edfaf1;
+  --loss-600: #c0273c;
+  --loss-50: #fdedef;
+
+  /* Status / feedback */
+  --warning-600: #b45309;
+  --warning-50: #fef3e2;
+  --danger-600: #c0273c;
+  --danger-50: #fdedef;
+  --info-600: #2554c7;
+  --info-50: #eaf0fd;
+  --success-600: #15803d;
+  --success-50: #edfaf1;
+
+  /* Spacing (8px base unit) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Layout */
+  --content-max-width: 1280px;
+  --radius: 8px;
+  --radius-pill: 999px;
+  --radius-modal: 12px;
+  --border: 1px solid var(--neutral-200);
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.08);
+  --shadow-modal: 0 8px 24px rgba(16, 24, 40, 0.18);
+
+  /* Typography */
+  --font-family: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--neutral-50);
+  color: var(--neutral-900);
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+table {
+  font-feature-settings: "tnum" 1;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+a {
+  color: var(--primary-600);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: var(--space-3);
+  top: var(--space-3);
+  width: auto;
+  height: auto;
+  padding: var(--space-2) var(--space-4);
+  background: var(--neutral-0);
+  border: 2px solid var(--primary-600);
+  border-radius: var(--radius);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-600);
+  outline-offset: 2px;
+}
