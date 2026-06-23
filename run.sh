@@ -27,8 +27,10 @@ case "$CMD" in
     docker compose ps
     ;;
   test)
-    echo "🧪 Running tests..."
+    echo "🧪 Running backend tests..."
     docker compose run --rm api pytest "${@:2}"
+    echo "🧪 Running frontend tests..."
+    docker compose run --rm frontend npm test -- --watchAll=false
     ;;
   shell)
     docker compose exec "${2:-api}" bash
